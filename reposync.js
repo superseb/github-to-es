@@ -21,12 +21,12 @@ var github = new GitHubApi({
   timeout: 50000
 });
 
-log.info("github_token", config.github_token);
+log.debug("github_token", process.env.GITHUB_TOKEN);
 
 // user token
 github.authenticate({
   type: "token",
-  token: config.github_token,
+  token: process.env.GITHUB_TOKEN,
 });
 
 class RepoSync {

@@ -2,10 +2,9 @@
 var bunyan = require('bunyan');
 var log = bunyan.createLogger({name: 'app'});
 var elasticsearch = require('elasticsearch');
-var config = require('./config.json');
 
 var client = new elasticsearch.Client({
-  host: config.elasticsearch.host +  ':' + config.elasticsearch.port,
+  host: 'elasticsearch:9200',
   log: 'error'
 });
 
